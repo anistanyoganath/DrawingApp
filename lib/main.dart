@@ -1,4 +1,5 @@
-import 'package:aidrawing/presentation/screens/home/home_screen.dart';
+import 'package:aidrawing/app/app.dart';
+import 'package:aidrawing/app/router.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -31,8 +32,15 @@ class MyApp extends StatelessWidget {
             color: Color(0xFF2D3047),
           ),
         ),
+        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+          backgroundColor: Colors.white,
+          selectedItemColor: Color(0xFF6C63FF),
+          unselectedItemColor: Colors.grey,
+        ),
       ),
-      home: const HomeScreen(),
+      home: const App(),
+      initialRoute: '/',
+      onGenerateRoute: AppRouter.generateRoute,
     );
   }
 }

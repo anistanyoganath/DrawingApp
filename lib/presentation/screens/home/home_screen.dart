@@ -6,7 +6,6 @@ import 'package:aidrawing/presentation/screens/home/widgets/home_header.dart';
 import 'package:aidrawing/presentation/widgets/primary_button.dart';
 import 'package:flutter/material.dart';
 
-import 'package:flutter/material.dart';
 import 'widgets/category_card.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -166,12 +165,6 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void _navigateToGenerateScreen(BuildContext context) {
-    // TODO: Implement navigation to generate screen
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text('Generating ${selectedCategory!.name} drawing...'),
-        backgroundColor: AppColors.primary,
-      ),
-    );
+    Navigator.pushNamed(context, '/generate', arguments: selectedCategory);
   }
 }
